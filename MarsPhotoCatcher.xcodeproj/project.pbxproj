@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		9CD3C87C2221F88600E14EAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3C87B2221F88600E14EAD /* AppDelegate.swift */; };
-		9CD3C87E2221F88600E14EAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3C87D2221F88600E14EAD /* ViewController.swift */; };
-		9CD3C8812221F88600E14EAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD3C87F2221F88600E14EAD /* Main.storyboard */; };
 		9CD3C8832221F88700E14EAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CD3C8822221F88700E14EAD /* Assets.xcassets */; };
 		9CD3C8862221F88700E14EAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD3C8842221F88700E14EAD /* LaunchScreen.storyboard */; };
 		9CD3C8912221F88700E14EAD /* MarsPhotoCatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3C8902221F88700E14EAD /* MarsPhotoCatcherTests.swift */; };
 		9CD3C89C2221F88700E14EAD /* MarsPhotoCatcherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3C89B2221F88700E14EAD /* MarsPhotoCatcherUITests.swift */; };
+		9CD3C8AC2221F91500E14EAD /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3C8AB2221F91500E14EAD /* BaseButton.swift */; };
+		9CD3C8AE2221F93500E14EAD /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3C8AD2221F93500E14EAD /* BaseLabel.swift */; };
+		9CD3C8B12221F97600E14EAD /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3C8B02221F97600E14EAD /* UIColor.swift */; };
+		9CD3C8B32221F99700E14EAD /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3C8B22221F99700E14EAD /* UIFont.swift */; };
+		9CD3C8B52221F9C100E14EAD /* UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3C8B42221F9C100E14EAD /* UIKit.swift */; };
+		9CD3C8B82221FA1400E14EAD /* MarsPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3C8B72221FA1400E14EAD /* MarsPhoto.swift */; };
+		9CD3C8BB2221FAA800E14EAD /* MarsPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3C8BA2221FAA800E14EAD /* MarsPhotoCell.swift */; };
+		9CD3C8BE2221FB2B00E14EAD /* RoverChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3C8BD2221FB2B00E14EAD /* RoverChoiceViewController.swift */; };
+		9CD3C8C02221FBB200E14EAD /* DateChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3C8BF2221FBB200E14EAD /* DateChoiceViewController.swift */; };
+		9CD3C8C22221FBEC00E14EAD /* MarsPhotoViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD3C8C12221FBEC00E14EAD /* MarsPhotoViewContoller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +44,6 @@
 /* Begin PBXFileReference section */
 		9CD3C8782221F88600E14EAD /* MarsPhotoCatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsPhotoCatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD3C87B2221F88600E14EAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9CD3C87D2221F88600E14EAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9CD3C8802221F88600E14EAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9CD3C8822221F88700E14EAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CD3C8852221F88700E14EAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9CD3C8872221F88700E14EAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +53,16 @@
 		9CD3C8972221F88700E14EAD /* MarsPhotoCatcherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarsPhotoCatcherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CD3C89B2221F88700E14EAD /* MarsPhotoCatcherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotoCatcherUITests.swift; sourceTree = "<group>"; };
 		9CD3C89D2221F88700E14EAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CD3C8AB2221F91500E14EAD /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		9CD3C8AD2221F93500E14EAD /* BaseLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
+		9CD3C8B02221F97600E14EAD /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		9CD3C8B22221F99700E14EAD /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		9CD3C8B42221F9C100E14EAD /* UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit.swift; sourceTree = "<group>"; };
+		9CD3C8B72221FA1400E14EAD /* MarsPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhoto.swift; sourceTree = "<group>"; };
+		9CD3C8BA2221FAA800E14EAD /* MarsPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotoCell.swift; sourceTree = "<group>"; };
+		9CD3C8BD2221FB2B00E14EAD /* RoverChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverChoiceViewController.swift; sourceTree = "<group>"; };
+		9CD3C8BF2221FBB200E14EAD /* DateChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateChoiceViewController.swift; sourceTree = "<group>"; };
+		9CD3C8C12221FBEC00E14EAD /* MarsPhotoViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotoViewContoller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +113,12 @@
 		9CD3C87A2221F88600E14EAD /* MarsPhotoCatcher */ = {
 			isa = PBXGroup;
 			children = (
-				9CD3C87B2221F88600E14EAD /* AppDelegate.swift */,
-				9CD3C87D2221F88600E14EAD /* ViewController.swift */,
-				9CD3C87F2221F88600E14EAD /* Main.storyboard */,
-				9CD3C8822221F88700E14EAD /* Assets.xcassets */,
-				9CD3C8842221F88700E14EAD /* LaunchScreen.storyboard */,
+				9CD3C8B62221F9E000E14EAD /* Model */,
+				9CD3C8B92221FA7600E14EAD /* View */,
+				9CD3C8BC2221FAE400E14EAD /* Controller */,
+				9CD3C8AF2221F95000E14EAD /* Core */,
+				9CD3C8AA2221F8FB00E14EAD /* Base */,
+				9CD3C8A92221F8A300E14EAD /* SupportingFiles */,
 				9CD3C8872221F88700E14EAD /* Info.plist */,
 			);
 			path = MarsPhotoCatcher;
@@ -123,6 +140,61 @@
 				9CD3C89D2221F88700E14EAD /* Info.plist */,
 			);
 			path = MarsPhotoCatcherUITests;
+			sourceTree = "<group>";
+		};
+		9CD3C8A92221F8A300E14EAD /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				9CD3C8822221F88700E14EAD /* Assets.xcassets */,
+				9CD3C8842221F88700E14EAD /* LaunchScreen.storyboard */,
+				9CD3C87B2221F88600E14EAD /* AppDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		9CD3C8AA2221F8FB00E14EAD /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				9CD3C8AB2221F91500E14EAD /* BaseButton.swift */,
+				9CD3C8AD2221F93500E14EAD /* BaseLabel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		9CD3C8AF2221F95000E14EAD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9CD3C8B02221F97600E14EAD /* UIColor.swift */,
+				9CD3C8B22221F99700E14EAD /* UIFont.swift */,
+				9CD3C8B42221F9C100E14EAD /* UIKit.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		9CD3C8B62221F9E000E14EAD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9CD3C8B72221FA1400E14EAD /* MarsPhoto.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9CD3C8B92221FA7600E14EAD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9CD3C8BA2221FAA800E14EAD /* MarsPhotoCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9CD3C8BC2221FAE400E14EAD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9CD3C8BD2221FB2B00E14EAD /* RoverChoiceViewController.swift */,
+				9CD3C8BF2221FBB200E14EAD /* DateChoiceViewController.swift */,
+				9CD3C8C12221FBEC00E14EAD /* MarsPhotoViewContoller.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +303,6 @@
 			files = (
 				9CD3C8862221F88700E14EAD /* LaunchScreen.storyboard in Resources */,
 				9CD3C8832221F88700E14EAD /* Assets.xcassets in Resources */,
-				9CD3C8812221F88600E14EAD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,8 +327,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CD3C87E2221F88600E14EAD /* ViewController.swift in Sources */,
+				9CD3C8AE2221F93500E14EAD /* BaseLabel.swift in Sources */,
+				9CD3C8BB2221FAA800E14EAD /* MarsPhotoCell.swift in Sources */,
+				9CD3C8B32221F99700E14EAD /* UIFont.swift in Sources */,
+				9CD3C8AC2221F91500E14EAD /* BaseButton.swift in Sources */,
+				9CD3C8B52221F9C100E14EAD /* UIKit.swift in Sources */,
+				9CD3C8BE2221FB2B00E14EAD /* RoverChoiceViewController.swift in Sources */,
+				9CD3C8C22221FBEC00E14EAD /* MarsPhotoViewContoller.swift in Sources */,
 				9CD3C87C2221F88600E14EAD /* AppDelegate.swift in Sources */,
+				9CD3C8B12221F97600E14EAD /* UIColor.swift in Sources */,
+				9CD3C8B82221FA1400E14EAD /* MarsPhoto.swift in Sources */,
+				9CD3C8C02221FBB200E14EAD /* DateChoiceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +373,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9CD3C87F2221F88600E14EAD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9CD3C8802221F88600E14EAD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9CD3C8842221F88700E14EAD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
