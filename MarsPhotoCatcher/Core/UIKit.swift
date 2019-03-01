@@ -2,7 +2,7 @@
 //  UIKit.swift
 //  MarsPhotoCatcher
 //
-//  Created by Handole Kim on 2/23/19.
+//  Created by Han Dole Kim on 2/23/19.
 //  Copyright © 2019 Han Dole Kim. All rights reserved.
 //
 import UIKit
@@ -142,19 +142,19 @@ extension UIImageView {
         // try load images from cache first
         if let imageFromCache = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
             self.image = imageFromCache
-            print("Image set from cache: \(imageCache)")
             return
         }
         
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
             
             if error != nil {
-                print(error as Any)
-                print("@@@@@@@@@@@@")
+                //print(error as Any)
+                DispatchQueue.main.async {
+                    self.image = UIImage(named: "error-404")
+                }
                 return
             }
             DispatchQueue.main.async {
-                
                 let imageToCache = UIImage(data: data!)
                 
                 imageCache.setObject(imageToCache!, forKey: urlString as AnyObject)
@@ -163,5 +163,15 @@ extension UIImageView {
             }
         }
         task.resume()
+    }
+}
+
+// MARK: - UIAlertController
+extension UIAlertController {
+    open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+    }
+    open override var shouldAutorotate: Bool {
+        return false
     }
 }

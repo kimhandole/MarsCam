@@ -2,7 +2,7 @@
 //  MarsPhotoViewContoller.swift
 //  MarsPhotoCatcher
 //
-//  Created by Handole Kim on 2/23/19.
+//  Created by Han Dole Kim on 2/23/19.
 //  Copyright © 2019 Han Dole Kim. All rights reserved.
 //
 import UIKit
@@ -13,36 +13,77 @@ class MarsPhotoViewController: UICollectionViewController, UICollectionViewDeleg
     var date: Date = Date()
     
     var marsPhotos: [MarsPhoto]?
+    var marsPhotoImageView: UIImageView?
+    
+    var dateBackButton: UIBarButtonItem?
+    
+    // variables for animation
+    let zoomImageView = UIImageView()
+    let blackBackgroundView = UIView()
+    
+    
+    private func dateToString(from date: Date, format: String) -> String {
+        let df = DateFormatter()
+        df.dateFormat = format
+        return df.string(from: date)
+    }
     
     private func noPhotosFoundAlert() {
-        let date = dateToString(from: self.date, format: "MMM d, yyyy")
-        let alert = UIAlertController(title: "No Photos Found", message: "No photos were taken on \(date) by \(rover). Please choose another date.", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Okay", style: .default) { (action) in
-            self.dismiss(animated: true, completion: nil)
+        DispatchQueue.main.async {
+            let date = self.dateToString(from: self.date, format: "MMM d, yyyy")
+            let alert = UIAlertController(title: "No Photos Found", message: "No photos were taken on \(date) by \(self.rover). Please choose another date.", preferredStyle: .alert)
+            let action = UIAlertAction(title: "Okay", style: .default) { (action) in
+                self.dismiss(animated: true, completion: nil)
+            }
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
         }
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
+    }
+    
+    
+    
+    @objc private func dateBackButtonTapped() {
+        dismiss(animated: true, completion: nil)
     }
     
     @objc private func backButtonTapped() {
-        dismiss(animated: true, completion: nil)
+        zoomOut()
+    }
+    
+    @objc private func shareButtonTapped() {
+        let activityController = UIActivityViewController(activityItems: [zoomImageView.image!], applicationActivities: nil)
+        
+        activityController.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        
+        DispatchQueue.main.async {
+            self.present(activityController, animated: true, completion: nil)
+        }
     }
     
     // Fetch JSON object
     private func fetchMarsPhotos(rover: String, date: String) {
+        
         let basePath = "https://api.nasa.gov/mars-photos/api/v1/rovers/"
         let url = basePath + rover + "/photos?earth_date=" + date + "&api_key=8BVKWHbxisG8L4zgUTGEgjJisEmyeg3neYyAEdhZ"
         let request = URLRequest(url: URL(string: url)!)
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             
-            if let error = error {
-                print("Failed to get data from url: ", error)
+            if error != nil {
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Network Connection Fail", message: "There was a network connection problem. Please check your connection and try again.", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "Okay", style: .default) { (action) in
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+                }
+                
+                //print("Failed to get data from url: ", error)
                 return
             }
             
             guard let data = data else { return }
-            
             do {
                 if let jsonResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? NSDictionary {
                     
@@ -56,8 +97,6 @@ class MarsPhotoViewController: UICollectionViewController, UICollectionViewDeleg
                         let imageSource = obj["img_src"] as! String
                         let marsPhoto = MarsPhoto(id: id, cameraName: cameraName, imageSource: imageSource)
                         self.marsPhotos?.append(marsPhoto)
-                        print(marsPhoto.imageSource)
-                        print(self.marsPhotos?.count as Any)
                     }
                 }
                 // No Photos Found
@@ -75,18 +114,6 @@ class MarsPhotoViewController: UICollectionViewController, UICollectionViewDeleg
         task.resume()
     }
     
-    private func dateToString(from date: Date, format: String) -> String {
-        let df = DateFormatter()
-        df.dateFormat = format
-        return df.string(from: date)
-    }
-    
-    
-    let zoomImageView = UIImageView()
-    let blackBackgroundView = UIView()
-    
-    var marsPhotoImageView: UIImageView?
-    
     @objc func zoomOut() {
         if let startingFrame = marsPhotoImageView!.superview?.convert(marsPhotoImageView!.frame, to: nil) {
             
@@ -101,6 +128,10 @@ class MarsPhotoViewController: UICollectionViewController, UICollectionViewDeleg
                 self.marsPhotoImageView?.alpha = 1
             })
         }
+        // Pop Out Share Button
+        self.navigationItem.rightBarButtonItem = nil
+        // Push In Date Back Button
+        self.navigationItem.leftBarButtonItem = dateBackButton
     }
     
     func animateImageView(marsPhotoImageView: UIImageView) {
@@ -115,7 +146,6 @@ class MarsPhotoViewController: UICollectionViewController, UICollectionViewDeleg
             blackBackgroundView.alpha = 0
             view.addSubview(blackBackgroundView)
             
-            zoomImageView.backgroundColor = .red
             zoomImageView.frame = startingFrame
             zoomImageView.isUserInteractionEnabled = true
             zoomImageView.image = marsPhotoImageView.image
@@ -136,6 +166,11 @@ class MarsPhotoViewController: UICollectionViewController, UICollectionViewDeleg
                 self.blackBackgroundView.alpha = 1
             }
         }
+        // Push In Share Button
+        let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareButtonTapped))
+        self.navigationItem.rightBarButtonItem = shareButton
+        // Push In Back Button
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backButtonTapped))
     }
     
     override func viewDidLoad() {
@@ -148,12 +183,12 @@ class MarsPhotoViewController: UICollectionViewController, UICollectionViewDeleg
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.barStyle = .black
         
-        //        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.tintColor = .white
         
         let dateButtonString = dateToString(from: date, format: "MMM d, yyyy")
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: dateButtonString, style: .plain, target: self, action: #selector(backButtonTapped))
+        dateBackButton = UIBarButtonItem(title: dateButtonString, style: .plain, target: self, action: #selector(dateBackButtonTapped))
+        navigationItem.leftBarButtonItem = dateBackButton
         
         navigationItem.title = rover
         
@@ -184,8 +219,7 @@ class MarsPhotoViewController: UICollectionViewController, UICollectionViewDeleg
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedCell = collectionView.cellForItem(at: indexPath) as? MarsPhotoCell
-        print(selectedCell as Any)
+        _ = collectionView.cellForItem(at: indexPath) as? MarsPhotoCell
     }
     
     // Disable Rotation of UIViewController

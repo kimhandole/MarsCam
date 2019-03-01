@@ -60,7 +60,7 @@
 		9CD3C8B42221F9C100E14EAD /* UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit.swift; sourceTree = "<group>"; };
 		9CD3C8B72221FA1400E14EAD /* MarsPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhoto.swift; sourceTree = "<group>"; };
 		9CD3C8BA2221FAA800E14EAD /* MarsPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotoCell.swift; sourceTree = "<group>"; };
-		9CD3C8BD2221FB2B00E14EAD /* RoverChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverChoiceViewController.swift; sourceTree = "<group>"; };
+		9CD3C8BD2221FB2B00E14EAD /* RoverChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverChoiceViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		9CD3C8BF2221FBB200E14EAD /* DateChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateChoiceViewController.swift; sourceTree = "<group>"; };
 		9CD3C8C12221FBEC00E14EAD /* MarsPhotoViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotoViewContoller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */

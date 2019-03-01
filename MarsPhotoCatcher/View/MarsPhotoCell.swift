@@ -2,7 +2,7 @@
 //  MarsPhotoCell.swift
 //  MarsPhotoCatcher
 //
-//  Created by Handole Kim on 2/23/19.
+//  Created by Han Dole Kim on 2/23/19.
 //  Copyright © 2019 Han Dole Kim. All rights reserved.
 //
 import UIKit
@@ -38,7 +38,7 @@ class MarsPhotoCell: UICollectionViewCell {
         let lbl = UILabel()
         lbl.backgroundColor = .clear
         lbl.textColor = .white
-        lbl.font = .Semibold
+        lbl.font = .Regular
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
@@ -47,7 +47,7 @@ class MarsPhotoCell: UICollectionViewCell {
         let lbl = UILabel()
         lbl.backgroundColor = .clear
         lbl.textColor = .gray
-        lbl.font = .Regular
+        lbl.font = .Footnote
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
@@ -66,7 +66,7 @@ class MarsPhotoCell: UICollectionViewCell {
         marsPhotoImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(animate)))
         
         addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: marsPhotoImageView)
-        addConstraintsWithFormat(format: "V:|-16-[v0]-8-[v1]-8-[v2]-16-[v3(1)]|", views: marsPhotoImageView, idLabel, cameraNameLabel, separatorView)
+        addConstraintsWithFormat(format: "V:|-16-[v0]-8-[v1]-0-[v2]-16-[v3(1)]|", views: marsPhotoImageView, idLabel, cameraNameLabel, separatorView)
         
         addConstraintsWithFormat(format: "H:|[v0]|", views: separatorView)
         
@@ -80,7 +80,7 @@ class MarsPhotoCell: UICollectionViewCell {
         addConstraint(NSLayoutConstraint(item: idLabel, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 20))
         
         // cameraNameLabel Top Constraints
-        addConstraint(NSLayoutConstraint(item: cameraNameLabel, attribute: .top, relatedBy: .equal, toItem: idLabel, attribute: .bottom, multiplier: 1, constant: 8))
+        addConstraint(NSLayoutConstraint(item: cameraNameLabel, attribute: .top, relatedBy: .equal, toItem: idLabel, attribute: .bottom, multiplier: 1, constant: 0))
         // cameraNameLabel Left Constraints
         addConstraint(NSLayoutConstraint(item: cameraNameLabel, attribute: .left, relatedBy: .equal, toItem: marsPhotoImageView, attribute: .left, multiplier: 1, constant: 0))
         // cameraNameLabel Right Constraints

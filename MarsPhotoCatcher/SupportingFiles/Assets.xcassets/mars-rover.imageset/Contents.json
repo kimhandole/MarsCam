@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "mars-rover.png",
+      "filename" : "moon-rover.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "mars-rover (1).png",
+      "filename" : "moon-rover@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "mars-rover (2).png",
+      "filename" : "moon-rover@3x.png",
       "scale" : "3x"
     }
   ],

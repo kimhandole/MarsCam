@@ -2,7 +2,7 @@
 //  BaseButton.swift
 //  MarsPhotoCatcher
 //
-//  Created by Handole Kim on 2/23/19.
+//  Created by Han Dole Kim on 2/23/19.
 //  Copyright © 2019 Han Dole Kim. All rights reserved.
 //
 import UIKit
