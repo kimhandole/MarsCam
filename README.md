@@ -32,7 +32,6 @@
 
 ### Share image
 User can share the image they found
-![EX6](./images/ex6.jpeg)
 
 ## Technical details
 ### Zoom animation
