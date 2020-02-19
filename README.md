@@ -4,7 +4,7 @@
 
 ## Built with
 * [Swift](https://developer.apple.com/swift/)
-* [XCode](https://developer.apple.com/xcode/)
+* [Xcode](https://developer.apple.com/xcode/)
 
 ## Deployment
 [iOS App Store](https://www.apple.com/ios/app-store/)
