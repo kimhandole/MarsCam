@@ -31,6 +31,8 @@
 ![EX3](./images/ex3.png) ![EX4](./images/ex4.png)
 
 ### Share image
+User can share the image they found
+![EX6](./images/ex6.jpeg)
 
 ## Technical details
 ### Zoom animation
