@@ -4,6 +4,10 @@
 ## App icon
 ![MarsCam](./images/logo.png)
 
+## Screenshoot
+
+![EX5](./images/ex5.png) 
+
 ## Instructions
 1. Select an earth date
 
@@ -24,7 +28,7 @@
 
 ## Key features
 ### Image show
-![EX3](./images/ex3.png) ![EX4](./images/ex4.png) ![EX5](./images/ex5.png) 
+![EX3](./images/ex3.png) ![EX4](./images/ex4.png)
 
 ### Share image
 
