@@ -1,4 +1,5 @@
 # README
+![MarsCam](./image/logo.jpg)
 ## MarsCam
 [MarsCam](https://apps.apple.com/us/app/marscam/id1454287204) is an iOS app shows real Mars photos taken by three Mars rovers: curiosity, opportunity, spirit.
 
@@ -7,7 +8,7 @@
 * [Xcode](https://developer.apple.com/xcode/)
 
 ## Deployment
-[iOS App Store](https://www.apple.com/ios/app-store/)
+* [App Store, iOS](https://www.apple.com/ios/app-store/)
 
 ## Key features
 ### Image show
