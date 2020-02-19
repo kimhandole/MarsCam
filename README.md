@@ -6,7 +6,7 @@
 
 ## Screenshoot
 
-![EX5](./images/ex5.png) 
+![EX5](./images/ex5.png)
 
 ## Instructions
 1. Select an earth date
@@ -32,6 +32,8 @@
 
 ### Share image
 User can share the image they found
+
+![EX6](./images/ex6.png)
 
 ## Technical details
 ### Zoom animation
