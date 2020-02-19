@@ -1,7 +1,19 @@
 # README
-![MarsCam](./image/logo.jpg)
 ## MarsCam
-[MarsCam](https://apps.apple.com/us/app/marscam/id1454287204) is an iOS app shows real Mars photos taken by three Mars rovers: curiosity, opportunity, spirit.
+[MarsCam](https://apps.apple.com/us/app/marscam/id1454287204) is an iOS app shows real Mars photos taken by the three Mars rovers: Curiosity, Opportunity, Spirit.
+## App icon
+![MarsCam](./images/logo.png)
+
+## Instructions
+1. Select an earth date
+
+![EX1](./images/ex1.png)
+
+2. Choose between the three Mars rovers:  Curiosity, Opportunity, Spirit.
+
+![EX2](./images/ex2.png)
+
+3. Press submit button
 
 ## Built with
 * [Swift](https://developer.apple.com/swift/)
@@ -12,7 +24,9 @@
 
 ## Key features
 ### Image show
-### Share
+![EX3](./images/ex3.png) ![EX4](./images/ex4.png) ![EX5](./images/ex5.png) 
+
+### Share image
 
 ## Technical details
 ### Zoom animation
