@@ -40,8 +40,6 @@ class MarsPhotoViewController: UICollectionViewController, UICollectionViewDeleg
         }
     }
     
-    
-    
     @objc private func dateBackButtonTapped() {
         dismiss(animated: true, completion: nil)
     }
